@@ -2,7 +2,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 1vh;
-    background-color: #001c1f;
+    background: linear-gradient(180deg, #002A2F 0%, #005962 100%);
     color: white;
 
     main > * {
@@ -27,12 +27,13 @@ body {
         
         .introduction {
             grid-area: introduction;
-            background: #008694;
+            background: linear-gradient(180deg, #008694 0%, #004B53 100%);
             position: relative;
+            overflow: hidden;
 
             img {
                 position: absolute;
-                right: 0;
+                right: -15px;
                 bottom: 0;
                 max-width: 28vh;
             }
@@ -49,13 +50,13 @@ body {
                     background: none;
 
                     .black {
-                        color: black;
+                        color: #111111;
                         background: none;
                     }
                 }
 
                 &__role {
-                    color: #e2e2e2;
+                    color: #bebcbc;
                     font-size: 15px;
                     font-style: normal;
                     font-weight: 600;
@@ -75,7 +76,7 @@ body {
 
         .github {
             grid-area: github;
-            background: #242c32;
+            background: linear-gradient(180deg, #494949 0%, #0D0D0D 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,7 +97,7 @@ body {
 
         .skills {
             grid-area: skills;
-            background: #025a63;
+            background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
         }
 
         .projects {
@@ -107,7 +108,7 @@ body {
 
         .linkedin {
             grid-area: linkedin;
-            background: #0e76a8;
+            background: linear-gradient(180deg, #0A66C2 0%, #052544 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -130,12 +131,12 @@ body {
 
         .language {
             grid-area: language;
-            background: #242c32;
+            background: linear-gradient(180deg, #494949 0%, #0D0D0D 100%);
         }
 
         .contact {
             grid-area: contact;
-            background: #025a63;
+            background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
             display: flex;
             flex-direction: column;
             justify-content: space-around;
