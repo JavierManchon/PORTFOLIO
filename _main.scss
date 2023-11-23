@@ -2,7 +2,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 1vh;
-    background: linear-gradient(180deg, #002A2F 0%, #005962 100%);
+    background: linear-gradient(180deg, #252525 0%, #010407 100%);
     color: white;
 
     main > * {
@@ -17,17 +17,18 @@ body {
         height: 98vh;
         gap: 5px;
         grid-template-areas:
-            "introduction introduction introduction introduction"
-            "github contact contact contact"
-            "pokedex pokedex pokedex linkedin"
-            "pokedex pokedex pokedex language"
-            "skills skills skills skills";
-        grid-template-rows: 20vh 15vh 15vh 15vh;
-        grid-template-columns: 15vh 1fr 1fr 15vh;
+            "introduction introduction introduction introduction introduction"
+            "pokedex pokedex pokedex linkedin linkedin"
+            "pokedex pokedex pokedex language language"
+            "github github contact contact contact"
+            "switcher chatbot skills skills skills"
+            "spotify spotify skills skills skills";
+        grid-template-rows: 20vh 15vh 15vh 15vh 7.5vh 1fr;
+        grid-template-columns: 7.5vh 7.5vh 1fr 7.5vh 7.5vh;
         
         .introduction {
             grid-area: introduction;
-            background: linear-gradient(180deg, #008694 0%, #004B53 100%);
+            background: linear-gradient(180deg, #041D35 0%, #010407 100%);
             position: relative;
             overflow: hidden;
 
@@ -50,7 +51,7 @@ body {
                     background: none;
 
                     .black {
-                        color: #111111;
+                        color: #00D1FF;;
                         background: none;
                     }
                 }
@@ -97,13 +98,27 @@ body {
 
         .skills {
             grid-area: skills;
-            background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
+            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
         }
 
         .projects {
             grid-area: pokedex;
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/EBGz.gif");
             background-size: cover;
+            position: relative;
+
+            .arrow {
+                width: 8%;
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
+
+            &__title {
+                font-size: 15px;
+                font-weight: bold;
+            }
         }
 
         .linkedin {
@@ -132,11 +147,48 @@ body {
         .language {
             grid-area: language;
             background: linear-gradient(180deg, #494949 0%, #0D0D0D 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__content {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .language-current {
+                    color: lightgrey;
+                    font-size: 40px;
+                    font-weight: bold;
+                }
+
+                .language-nav {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    
+                    span {
+                        font-size: 10px;
+                        font-weight: bold;
+                        color: grey;
+                    }
+
+                    .language-en {
+                        color: lightgray;
+                    }
+                }
+            }
         }
 
         .contact {
             grid-area: contact;
-            background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
+            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -160,12 +212,27 @@ body {
 
             span {
                 text-align: center;
-                font-size: 20px;
+                font-size: 15px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
                 background: none;
             }
+        }
+
+        .spotify {
+            grid-area: spotify;
+            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+        }
+
+        .switcher {
+            grid-area: switcher;
+            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+        }
+
+        .chatbot {
+            grid-area: chatbot;
+            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
         }
     }
 }

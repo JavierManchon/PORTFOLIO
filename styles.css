@@ -10,7 +10,7 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 1vh;
-  background: linear-gradient(180deg, #002A2F 0%, #005962 100%);
+  background: linear-gradient(180deg, #252525 0%, #010407 100%);
   color: white;
 }
 body main > * {
@@ -23,13 +23,13 @@ body main {
   width: 100%;
   height: 98vh;
   gap: 5px;
-  grid-template-areas: "introduction introduction introduction introduction" "github contact contact contact" "pokedex pokedex pokedex linkedin" "pokedex pokedex pokedex language" "skills skills skills skills";
-  grid-template-rows: 20vh 15vh 15vh 15vh;
-  grid-template-columns: 15vh 1fr 1fr 15vh;
+  grid-template-areas: "introduction introduction introduction introduction introduction" "pokedex pokedex pokedex linkedin linkedin" "pokedex pokedex pokedex language language" "github github contact contact contact" "switcher chatbot skills skills skills" "spotify spotify skills skills skills";
+  grid-template-rows: 20vh 15vh 15vh 15vh 7.5vh 1fr;
+  grid-template-columns: 7.5vh 7.5vh 1fr 7.5vh 7.5vh;
 }
 body main .introduction {
   grid-area: introduction;
-  background: linear-gradient(180deg, #008694 0%, #004B53 100%);
+  background: linear-gradient(180deg, #041D35 0%, #010407 100%);
   position: relative;
   overflow: hidden;
 }
@@ -51,7 +51,7 @@ body main .introduction__text__title {
   background: none;
 }
 body main .introduction__text__title .black {
-  color: #111111;
+  color: #00D1FF;
   background: none;
 }
 body main .introduction__text__role {
@@ -89,12 +89,24 @@ body main .github .arrow {
 }
 body main .skills {
   grid-area: skills;
-  background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
+  background: linear-gradient(180deg, #010407 0%, #041D35 100%);
 }
 body main .projects {
   grid-area: pokedex;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/EBGz.gif");
   background-size: cover;
+  position: relative;
+}
+body main .projects .arrow {
+  width: 8%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+}
+body main .projects__title {
+  font-size: 15px;
+  font-weight: bold;
 }
 body main .linkedin {
   grid-area: linkedin;
@@ -118,10 +130,42 @@ body main .linkedin .arrow {
 body main .language {
   grid-area: language;
   background: linear-gradient(180deg, #494949 0%, #0D0D0D 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .language__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .language__content .language-current {
+  color: lightgrey;
+  font-size: 40px;
+  font-weight: bold;
+}
+body main .language__content .language-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+body main .language__content .language-nav span {
+  font-size: 10px;
+  font-weight: bold;
+  color: grey;
+}
+body main .language__content .language-nav .language-en {
+  color: lightgray;
 }
 body main .contact {
   grid-area: contact;
-  background: linear-gradient(180deg, #025A63 0%, #001A1D 100%);
+  background: linear-gradient(180deg, #010407 0%, #041D35 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -144,9 +188,21 @@ body main .contact button {
 }
 body main .contact span {
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   background: none;
+}
+body main .spotify {
+  grid-area: spotify;
+  background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+}
+body main .switcher {
+  grid-area: switcher;
+  background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+}
+body main .chatbot {
+  grid-area: chatbot;
+  background: linear-gradient(180deg, #010407 0%, #041D35 100%);
 }/*# sourceMappingURL=styles.css.map */
