@@ -5,13 +5,14 @@ body {
     background: linear-gradient(180deg, #252525 0%, #010407 100%);
     color: white;
 
-    main > * {
+    .landing > * {
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         padding: 14px;
+        transition-duration: 1s;
     }
 
-    main {
+    .landing {
         display: grid;
         width: 100%;
         height: 98vh;
@@ -21,9 +22,10 @@ body {
             "pokedex pokedex pokedex linkedin linkedin"
             "pokedex pokedex pokedex language language"
             "github github contact contact contact"
-            "switcher chatbot skills skills skills"
-            "spotify spotify skills skills skills";
-        grid-template-rows: 20vh 15vh 15vh 15vh 7.5vh 1fr;
+            "skills skills skills switcher chatbot"
+            "skills skills skills spotify spotify"
+            "next next next next next";
+        grid-template-rows: 20vh 15vh 15vh 15vh 7.5vh 15vh 7.5vh;
         grid-template-columns: 7.5vh 7.5vh 1fr 7.5vh 7.5vh;
         
         .introduction {
@@ -85,6 +87,7 @@ body {
 
             .github-logo {
                 width: 100%;
+                transition-duration: 1s;
             }
 
             .arrow {
@@ -92,13 +95,64 @@ body {
                 width: 20%;
                 top: 10px;
                 right: 5px;
+                transition-duration: 1s;
                 filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .github-logo {
+                    transform: scale(1.2);
+                }
+    
+                .arrow {
+                    transform: scale(0.5);
+                } 
             }
         }
 
         .skills {
             grid-area: skills;
-            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+            background: linear-gradient(180deg, #041D35 0%, #010407 100%);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 15px;
+
+            &__language {
+                max-width: 15%;
+                height: auto;
+                transition-duration: 1s;
+            }
+
+            .angular {
+                max-width: 20%;
+            }
+
+            .css {
+                max-width: 12%;
+                transform: translateY(-6%);
+            }
+            .html {
+                max-width: 17%;
+                transform: translateY(-6%);
+            }
+            .mongo {
+                border-radius: 10px;
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .skills__language {
+                    transform: scale(1.2);
+                }
+            }
         }
 
         .projects {
@@ -106,9 +160,12 @@ body {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/EBGz.gif");
             background-size: cover;
             position: relative;
+            display: flex;
+
 
             .arrow {
                 width: 8%;
+                transition-duration: 1s;
                 position: absolute;
                 top: 10px;
                 right: 5px;
@@ -117,7 +174,20 @@ body {
 
             &__title {
                 font-size: 15px;
+                transition-duration: 1s;
                 font-weight: bold;
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .projects__title {
+                    font-size: 20px;
+                }
+    
+                .arrow {
+                    transform: scale(0.5);
+                } 
             }
         }
 
@@ -131,15 +201,29 @@ body {
 
             .linkedin-logo {
                 width: 80%;
+                transition-duration: 1s;
                 filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
             }
 
             .arrow {
                 width: 20%;
+                transition-duration: 1s;
                 position: absolute;
                 top: 10px;
                 right: 5px;
                 filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .linkedin-logo {
+                    transform: scale(1.2);
+                }
+    
+                .arrow {
+                    transform: scale(0.5);
+                } 
             }
 
         }
@@ -188,7 +272,7 @@ body {
 
         .contact {
             grid-area: contact;
-            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+            background: linear-gradient(180deg, #041D35 0%, #010407 100%);
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -197,7 +281,7 @@ body {
             button {
                 border-radius: 20px;
                 height: 40px;
-                width: 90%;
+                min-width: 210px;
                 background: #FFF;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 border: none;
@@ -222,17 +306,78 @@ body {
 
         .spotify {
             grid-area: spotify;
-            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/música-sonido.gif");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &__image {
+                width: 80%;
+                transition-duration: 1s;
+            }
+
+            .arrow {
+                position: absolute;
+                transition-duration: 1s;
+                width: 20%;
+                top: 10px;
+                right: 5px;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .spotify__image {
+                    transform: scale(1.2);
+                }
+    
+                .arrow {
+                    transform: scale(0.5);
+                } 
+            }
         }
 
         .switcher {
             grid-area: switcher;
-            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+            background: linear-gradient(180deg, #041D35 0%, #010407 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__image {
+                width: 100%;
+                transition-duration: 1s;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
+
+            &:hover {
+                transition-duration: 1s;
+
+                .switcher__image {
+                    transform: scale(1.2);
+                }
+            }
         }
 
         .chatbot {
             grid-area: chatbot;
-            background: linear-gradient(180deg, #010407 0%, #041D35 100%);
+            background: linear-gradient(180deg, #041D35 0%, #010407 100%);
+        }
+
+        .next {
+            grid-area: next;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            .bottom-arrow {
+                width: 30px;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(171deg) brightness(160%) contrast(102%);
+            }
         }
     }
 }
